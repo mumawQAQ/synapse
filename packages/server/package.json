@@ -1,6 +1,6 @@
 {
   "name": "@mumaw/synapse-server",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Server side logic for AI Agent",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

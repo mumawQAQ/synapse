@@ -1,6 +1,6 @@
 {
   "name": "@mumaw/synapse-client",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Client side hooks for AI Agent",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
