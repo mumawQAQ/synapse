@@ -1,4 +1,4 @@
-import { useAgentTool, useContextSync } from "@synapse/client";
+import { useAgentTool, useContextSync } from "@mumaw/synapse-client";
 import { useState } from "react";
 import type { Todo } from "../types";
 

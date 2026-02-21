@@ -1,4 +1,4 @@
-import { useAgentChat, useAgentClient } from "@synapse/client";
+import { useAgentChat, useAgentClient } from "@mumaw/synapse-client";
 import { useState, useRef, useEffect } from "react";
 import { TodosPage } from "./pages/TodosPage";
 import { NotesPage } from "./pages/NotesPage";

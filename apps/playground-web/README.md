@@ -1,6 +1,6 @@
 # Synapse Playground Web (React)
 
-This package serves as a reference frontend implementation utilizing the `@synapse/client` React SDK. It connects to the `playground-server` and demonstrates how an AI Agent can natively drive a React application.
+This package serves as a reference frontend implementation utilizing the `@mumaw/synapse-client` React SDK. It connects to the `playground-server` and demonstrates how an AI Agent can natively drive a React application.
 
 ## Getting Started
 

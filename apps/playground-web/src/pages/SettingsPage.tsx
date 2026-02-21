@@ -1,4 +1,4 @@
-import { useAgentTool, useContextSync } from "@synapse/client";
+import { useAgentTool, useContextSync } from "@mumaw/synapse-client";
 import type { AppSettings } from "../types";
 
 interface SettingsPageProps {

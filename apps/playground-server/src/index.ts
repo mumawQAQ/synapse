@@ -2,7 +2,7 @@ import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import cors from "cors";
-import { AgentServer } from "@synapse/server";
+import { AgentServer } from "@mumaw/synapse-server";
 import { todoRouter } from "./routers/todos";
 import { noteRouter } from "./routers/notes";
 import { settingsRouter } from "./routers/settings";

@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback, useId, useRef } from "react";
 import { useAgentClient } from "./agent_provider";
-import { AgentResponse, ClientContext, AGENT_EVENTS } from "@synapse/protocol";
+import { AgentResponse, ClientContext, AGENT_EVENTS } from "@mumaw/synapse-protocol";
 
 /**
  * useAgentTool — Register a local executor for a server-defined tool.

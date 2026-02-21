@@ -1,4 +1,4 @@
-import { ToolDefinition } from "@synapse/protocol";
+import { ToolDefinition } from "@mumaw/synapse-protocol";
 
 export class ToolRouter {
   public tools: ToolDefinition[] = [];

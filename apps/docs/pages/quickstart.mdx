@@ -7,15 +7,15 @@ The fastest way to understand Synapse is to get a basic WebSocket server running
 Install the core packages on your backend:
 
 ```bash
-npm install @synapse/server @synapse/protocol socket.io openai zod
+npm install @mumaw/synapse-server @mumaw/synapse-protocol socket.io openai zod
 ```
 
 Create a new file `server.ts`:
 
 ```typescript
 import { Server } from "socket.io";
-import { AgentServer } from "@synapse/server";
-import { OpenAIAgentProvider } from "@synapse/server/provider";
+import { AgentServer } from "@mumaw/synapse-server";
+import { OpenAIAgentProvider } from "@mumaw/synapse-server/provider";
 
 const io = new Server(3001, { cors: { origin: "*" } });
 
@@ -39,13 +39,13 @@ console.log("Synapse Server running on port 3001");
 Install the client SDK in your frontend app:
 
 ```bash
-npm install @synapse/client socket.io-client
+npm install @mumaw/synapse-client socket.io-client
 ```
 
 Wrap your React app in the `<AgentProvider>`:
 
 ```tsx
-import { AgentProvider } from "@synapse/client";
+import { AgentProvider } from "@mumaw/synapse-client";
 import { io } from "socket.io-client";
 
 const socket = io("http://localhost:3001");
@@ -64,7 +64,7 @@ export default function App() {
 Inside your application, use the `useAgentTool` hook to expose frontend functionality to the AI:
 
 ```tsx
-import { useAgentTool } from "@synapse/client";
+import { useAgentTool } from "@mumaw/synapse-client";
 import { z } from "zod";
 
 function ThemeToggle() {

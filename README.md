@@ -23,9 +23,9 @@ Unlike traditional Generative UI frameworks (which stream server-rendered UI com
 
 Synapse is structured as a monorepo powered by Turborepo:
 
-- **`@synapse/protocol`**: The core TypeScript interfaces, Zod Schemas (`ToolDefinition`, `ClientContext`), and event constants that power the real-time protocol.
-- **`@synapse/server`**: The core Node.js backend logic containing the `AgentServer`, `ClientSession`, `ToolRegistry`, and the `AgentProvider` (LLM wrappers).
-- **`@synapse/client`**: The React/frontend SDK providing context providers (`<AgentProvider>`) and easy-to-use hooks (e.g., `useAgentTool()`) to seamlessly link frontend actions to the agentic loop.
+- **`@mumaw/synapse-protocol`**: The core TypeScript interfaces, Zod Schemas (`ToolDefinition`, `ClientContext`), and event constants that power the real-time protocol.
+- **`@mumaw/synapse-server`**: The core Node.js backend logic containing the `AgentServer`, `ClientSession`, `ToolRegistry`, and the `AgentProvider` (LLM wrappers).
+- **`@mumaw/synapse-client`**: The React/frontend SDK providing context providers (`<AgentProvider>`) and easy-to-use hooks (e.g., `useAgentTool()`) to seamlessly link frontend actions to the agentic loop.
 
 ## Getting Started
 

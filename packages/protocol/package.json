@@ -1,5 +1,5 @@
 {
-  "name": "@synapse/protocol",
+  "name": "@mumaw/synapse-protocol",
   "version": "0.0.0",
   "description": "Shared protocol and types for Synapse agent",
   "main": "./dist/index.js",

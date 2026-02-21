@@ -23,4 +23,4 @@ Please describe the tests that you ran to verify your changes. Explain how to re
 
 ## Changeset
 
-- [ ] I have run `pnpm changeset` and included the generated markdown file in my pull request (Required for any changes to `@synapse/core`, `@synapse/client`, or `@synapse/protocol`)
+- [ ] I have run `pnpm changeset` and included the generated markdown file in my pull request (Required for any changes to `@mumaw/synapse-core`, `@mumaw/synapse-client`, or `@mumaw/synapse-protocol`)

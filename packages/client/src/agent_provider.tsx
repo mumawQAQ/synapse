@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect } from "react";
 import { AgentClient } from "./agent_client";
-import { ClientContext } from "@synapse/protocol";
+import { ClientContext } from "@mumaw/synapse-protocol";
 
 const AgentContext = createContext<AgentClient | null>(null);
 

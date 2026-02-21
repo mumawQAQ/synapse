@@ -1,6 +1,6 @@
 # Synapse Playground Server
 
-This package serves as a reference implementation of the `@synapse/server` package. It provides a running WebSocket server with predefined server-side tools to test the Synapse Agent architecture.
+This package serves as a reference implementation of the `@mumaw/synapse-server` package. It provides a running WebSocket server with predefined server-side tools to test the Synapse Agent architecture.
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ OPENAI_API_KEY=sk-...
 From the root of the monorepo, run:
 
 ```bash
-pnpm --filter @synapse/playground-server dev
+pnpm --filter @mumaw/synapse-playground-server dev
 ```
 
 _(Alternatively, simply run `pnpm dev` inside this directory)._

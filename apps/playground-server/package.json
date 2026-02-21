@@ -1,13 +1,13 @@
 {
-  "name": "@synapse/playground-server",
+  "name": "@mumaw/synapse-playground-server",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "tsx watch src/index.ts"
   },
   "dependencies": {
-    "@synapse/protocol": "workspace:*",
-    "@synapse/server": "workspace:*",
+    "@mumaw/synapse-protocol": "workspace:*",
+    "@mumaw/synapse-server": "workspace:*",
     "cors": "^2.8.5",
     "express": "^4.18.0",
     "socket.io": "^4.7.0",

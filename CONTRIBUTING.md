@@ -40,7 +40,7 @@ To start developing locally:
 
 We use [Changesets](https://github.com/changesets/changesets) for versioning and publishing packages.
 
-If your PR introduces a user-facing change or fixes a bug in `@synapse/client`, `@synapse/protocol`, or `@synapse/server`:
+If your PR introduces a user-facing change or fixes a bug in `@mumaw/synapse-client`, `@mumaw/synapse-protocol`, or `@mumaw/synapse-server`:
 
 1. Run the changeset CLI:
    ```bash

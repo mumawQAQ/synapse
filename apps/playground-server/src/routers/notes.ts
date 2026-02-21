@@ -1,6 +1,6 @@
-import { ToolRouter } from "@synapse/server";
+import { ToolRouter } from "@mumaw/synapse-server";
 import { z } from "zod";
-import { ClientContext } from "@synapse/protocol";
+import { ClientContext } from "@mumaw/synapse-protocol";
 
 export const noteRouter = new ToolRouter();
 

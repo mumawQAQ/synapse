@@ -3,7 +3,7 @@ import {
   ClientContext,
   Logger,
   DefaultLogger,
-} from "@synapse/protocol";
+} from "@mumaw/synapse-protocol";
 import { ToolRouter } from "./tool_router";
 
 /**

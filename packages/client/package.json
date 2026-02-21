@@ -1,5 +1,5 @@
 {
-  "name": "@synapse/client",
+  "name": "@mumaw/synapse-client",
   "version": "0.0.0",
   "description": "Client side hooks for AI Agent",
   "main": "./dist/index.js",
@@ -17,7 +17,7 @@
     "dev": "tsup --watch"
   },
   "dependencies": {
-    "@synapse/protocol": "workspace:*"
+    "@mumaw/synapse-protocol": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

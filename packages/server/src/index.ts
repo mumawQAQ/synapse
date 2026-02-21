@@ -3,7 +3,7 @@ import { AgentProvider, OpenAIAgentProvider } from "./provider";
 import { ClientSession } from "./session";
 import { ToolRegistry } from "./tool_registry";
 import { ToolRouter } from "./tool_router";
-import { ToolDefinition, Logger, DefaultLogger } from "@synapse/protocol";
+import { ToolDefinition, Logger, DefaultLogger } from "@mumaw/synapse-protocol";
 import { SessionStorageProvider, InMemorySessionStorage } from "./storage";
 
 export { ToolRegistry } from "./tool_registry";
@@ -18,7 +18,7 @@ export type {
   ErrorEvent,
 } from "./provider";
 
-export type { ToolDefinition } from "@synapse/protocol";
+export type { ToolDefinition } from "@mumaw/synapse-protocol";
 
 export interface AgentServerOptions {
   /** Default timeout for client tool execution in milliseconds. Defaults to 30000. */

@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { ToolDefinition, Logger, DefaultLogger } from "@synapse/protocol";
+import { ToolDefinition, Logger, DefaultLogger } from "@mumaw/synapse-protocol";
 
 const NEXT_ACTION_SUGGESTION_SCHEMA = {
   name: "next_action_suggestion_response",

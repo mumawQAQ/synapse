@@ -25,7 +25,7 @@ If applicable, include the stack trace, relevant console output, or screenshots 
 
 **Environment (please complete the following information):**
 
-- Package Version (`@synapse/server`, `@synapse/client`, `@synapse/protocol`): [e.g. 1.0.0]
+- Package Version (`@mumaw/synapse-server`, `@mumaw/synapse-client`, `@mumaw/synapse-protocol`): [e.g. 1.0.0]
 - Framework & Environment (Node Version, Next.js, Express, etc): [e.g. Node 20.x]
 - Browser (if applicable): [e.g. chrome, safari]
 

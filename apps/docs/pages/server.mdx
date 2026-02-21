@@ -1,6 +1,6 @@
 # Server Reference
 
-The `@synapse/server` package acts as the orchestration brain. It manages the LLM loops, validates results, registers secure tool handlers, and tracks individual WebSocket connections.
+The `@mumaw/synapse-server` package acts as the orchestration brain. It manages the LLM loops, validates results, registers secure tool handlers, and tracks individual WebSocket connections.
 
 ## The AgentServer
 
@@ -24,10 +24,10 @@ interface AgentServerOptions {
 ### Usage
 
 ```typescript
-import { AgentServer } from "@synapse/server";
+import { AgentServer } from "@mumaw/synapse-server";
 import { Server } from "socket.io";
 // Choose a provider (e.g. OpenAI)
-import { OpenAIAgentProvider } from "@synapse/server/provider";
+import { OpenAIAgentProvider } from "@mumaw/synapse-server/provider";
 
 const io = new Server(3001);
 
@@ -43,7 +43,7 @@ In order for the `AgentServer` to know what tools are available, you must regist
 To keep large applications organized, Synapse uses a `ToolRouter` pattern.
 
 ```typescript
-import { ToolRouter } from "@synapse/server";
+import { ToolRouter } from "@mumaw/synapse-server";
 
 // 1. Create a specialized router for user management
 const userTools = new ToolRouter();

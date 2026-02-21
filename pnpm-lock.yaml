@@ -26,13 +26,13 @@ importers:
 
   apps/docs:
     dependencies:
-      '@synapse/client':
+      '@mumaw/synapse-client':
         specifier: workspace:*
         version: link:../../packages/client
-      '@synapse/protocol':
+      '@mumaw/synapse-protocol':
         specifier: workspace:*
         version: link:../../packages/protocol
-      '@synapse/server':
+      '@mumaw/synapse-server':
         specifier: workspace:*
         version: link:../../packages/server
       next:
@@ -63,10 +63,10 @@ importers:
 
   apps/playground-server:
     dependencies:
-      '@synapse/protocol':
+      '@mumaw/synapse-protocol':
         specifier: workspace:*
         version: link:../../packages/protocol
-      '@synapse/server':
+      '@mumaw/synapse-server':
         specifier: workspace:*
         version: link:../../packages/server
       cors:
@@ -103,7 +103,7 @@ importers:
 
   apps/playground-web:
     dependencies:
-      '@synapse/client':
+      '@mumaw/synapse-client':
         specifier: workspace:*
         version: link:../../packages/client
       react:
@@ -155,7 +155,7 @@ importers:
 
   packages/client:
     dependencies:
-      '@synapse/protocol':
+      '@mumaw/synapse-protocol':
         specifier: workspace:*
         version: link:../protocol
     devDependencies:
@@ -193,7 +193,7 @@ importers:
 
   packages/server:
     dependencies:
-      '@synapse/protocol':
+      '@mumaw/synapse-protocol':
         specifier: workspace:*
         version: link:../protocol
       openai:

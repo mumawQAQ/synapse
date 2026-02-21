@@ -11,7 +11,7 @@ import {
   ToolResult,
   Logger,
   DefaultLogger,
-} from "@synapse/protocol";
+} from "@mumaw/synapse-protocol";
 import { AgentProvider, ToolCallEvent } from "./provider";
 import { ToolRegistry } from "./tool_registry";
 import OpenAI from "openai";

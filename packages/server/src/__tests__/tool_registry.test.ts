@@ -3,7 +3,7 @@ import { ToolRegistry } from "../tool_registry";
 import {
   ClientSideToolDefinition,
   ServerSideToolDefinition,
-} from "@synapse/protocol";
+} from "@mumaw/synapse-protocol";
 import { z } from "zod";
 import { ToolRouter } from "../tool_router";
 

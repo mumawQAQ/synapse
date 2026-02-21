@@ -1,4 +1,4 @@
-import { ClientContext } from "@synapse/protocol";
+import { ClientContext } from "@mumaw/synapse-protocol";
 import OpenAI from "openai";
 
 export interface SessionData {

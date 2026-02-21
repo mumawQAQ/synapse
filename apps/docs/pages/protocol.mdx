@@ -1,6 +1,6 @@
 # Protocol APIs
 
-The `@synapse/protocol` package contains strongly-typed interfaces and Zod schemas shared by both the Backend Server and the Frontend Client.
+The `@mumaw/synapse-protocol` package contains strongly-typed interfaces and Zod schemas shared by both the Backend Server and the Frontend Client.
 
 ## Definitions
 
@@ -11,7 +11,7 @@ If you are using TypeScript, you will frequently refer to the `ToolDefinition` t
 Client-side tools execute natively inside the user's browser (e.g., navigating a page, changing local state, interacting with React contexts).
 
 ```typescript
-import { ClientSideToolDefinition } from "@synapse/protocol";
+import { ClientSideToolDefinition } from "@mumaw/synapse-protocol";
 import { z } from "zod";
 
 const myTool: ClientSideToolDefinition = {
@@ -38,7 +38,7 @@ const myTool: ClientSideToolDefinition = {
 Server-side tools execute securely bypassing the client browser entirely. They are useful for inserting secure database rows, sending emails, or triggering infrastructure pipelines.
 
 ```typescript
-import { ServerSideToolDefinition } from "@synapse/protocol";
+import { ServerSideToolDefinition } from "@mumaw/synapse-protocol";
 import { z } from "zod";
 
 const mySecureTool: ServerSideToolDefinition = {
