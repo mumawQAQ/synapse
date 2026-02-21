@@ -1,5 +1,5 @@
 {
-  "name": "@mumaw/synapse-playground-server",
+  "name": "playground-server",
   "version": "1.0.1",
   "private": true,
   "scripts": {
