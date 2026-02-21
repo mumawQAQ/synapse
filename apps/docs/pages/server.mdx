@@ -1,0 +1,59 @@
+# Server Reference
+
+The `@synapse/server` package acts as the orchestration brain. It manages the LLM loops, validates results, registers secure tool handlers, and tracks individual WebSocket connections.
+
+## The AgentServer
+
+The `AgentServer` is the root class of the entire application. It wraps `socket.io` and handles all core logic.
+
+### Server Options
+
+You configure the server via the `AgentServerOptions` injected into the constructor.
+
+```typescript
+interface AgentServerOptions {
+  /**
+   * Default timeout for client tool execution in milliseconds.
+   * Defaults to 30000ms. If a client tool hangs indefinitely, the
+   * server will automatically kill the run and report an error to the LLM.
+   */
+  defaultToolTimeout?: number;
+}
+```
+
+### Usage
+
+```typescript
+import { AgentServer } from "@synapse/server";
+import { Server } from "socket.io";
+// Choose a provider (e.g. OpenAI)
+import { OpenAIAgentProvider } from "@synapse/server/provider";
+
+const io = new Server(3001);
+
+const agentServer = new AgentServer({
+  io,
+  defaultToolTimeout: 10000,
+});
+```
+
+## ToolRouter
+
+In order for the `AgentServer` to know what tools are available, you must register them.
+To keep large applications organized, Synapse uses a `ToolRouter` pattern.
+
+```typescript
+import { ToolRouter } from "@synapse/server";
+
+// 1. Create a specialized router for user management
+const userTools = new ToolRouter();
+
+userTools.register({
+  name: "get_user",
+  executionSide: "server",
+  // ... tool logic
+});
+
+// 2. Attach the router to the main server instance
+agentServer.use(userTools);
+```

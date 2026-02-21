@@ -1,0 +1,38 @@
+{
+  "name": "@synapse/server",
+  "version": "0.0.0",
+  "description": "Server side logic for AI Agent",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@synapse/protocol": "workspace:*",
+    "openai": "^6.18.0",
+    "zod": "^4.3.6"
+  },
+  "peerDependencies": {
+    "socket.io": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "socket.io": "^4.7.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

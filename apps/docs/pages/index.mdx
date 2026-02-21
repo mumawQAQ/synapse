@@ -1,0 +1,14 @@
+# Introduction to Synapse
+
+**Synapse** is an open-source, hybrid AI Agent framework built over WebSockets. It is designed specifically for building interactive, "copilot-like" assistants that securely and natively interact with your existing frontend UI and backend infrastructure.
+
+## Why Synapse?
+
+Unlike traditional Generative UI frameworks (like Vercel AI SDK RSC) which stream server-rendered React components down to the client, Synapse acts as an **agentic automation layer**. The AI operates as a powerful "ghost user," driving your existing native frontend logic and seamlessly executing server-side tasks.
+
+### Core Benefits
+
+1. **True Hybrid Execution:** Define tools that run on the Backend (e.g., querying databases, calling internal APIs) alongside tools that run on the Frontend (e.g., navigating pages, reading browser state, triggering React hooks).
+2. **Context-Aware Security:** The framework automatically syncs `ClientContext` (the user's current route, theme, or role) up to the server. The server uses this to filter which tools the LLM can see, entirely preventing the LLM from executing tools that aren't relevant to the current screen.
+3. **No UI Rework Required:** You do not need to rewrite your application to support Server Components. Synapse works flawlessly with standard SPAs, React, Vue, or vanilla JS.
+4. **Instant Reactions:** Operating over WebSockets eliminates the round-trip latency of standard HTTP streams. If the AI decides to "Click next", the UI responds instantly while the AI continues generating the rest of its text.

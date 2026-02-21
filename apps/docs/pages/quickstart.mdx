@@ -1,0 +1,85 @@
+# Quick Start
+
+The fastest way to understand Synapse is to get a basic WebSocket server running.
+
+## 1. Setup the Server
+
+Install the core packages on your backend:
+
+```bash
+npm install @synapse/server @synapse/protocol socket.io openai zod
+```
+
+Create a new file `server.ts`:
+
+```typescript
+import { Server } from "socket.io";
+import { AgentServer } from "@synapse/server";
+import { OpenAIAgentProvider } from "@synapse/server/provider";
+
+const io = new Server(3001, { cors: { origin: "*" } });
+
+const provider = new OpenAIAgentProvider({
+  model: "gpt-4o",
+  systemPrompt: "You are a helpful assistant.",
+});
+
+// Start the framework
+const agentServer = new AgentServer({
+  io,
+  provider,
+  defaultToolTimeout: 10000,
+});
+
+console.log("Synapse Server running on port 3001");
+```
+
+## 2. Connect the React Client
+
+Install the client SDK in your frontend app:
+
+```bash
+npm install @synapse/client socket.io-client
+```
+
+Wrap your React app in the `<AgentProvider>`:
+
+```tsx
+import { AgentProvider } from "@synapse/client";
+import { io } from "socket.io-client";
+
+const socket = io("http://localhost:3001");
+
+export default function App() {
+  return (
+    <AgentProvider socket={socket}>
+      <MyApplication />
+    </AgentProvider>
+  );
+}
+```
+
+## 3. Register a Local Tool
+
+Inside your application, use the `useAgentTool` hook to expose frontend functionality to the AI:
+
+```tsx
+import { useAgentTool } from "@synapse/client";
+import { z } from "zod";
+
+function ThemeToggle() {
+  useAgentTool({
+    name: "toggle_dark_mode",
+    description: "Switches the website template to dark mode",
+    parameters: z.object({}), // No arguments needed
+    handler: async () => {
+      document.body.classList.add("dark");
+      return { success: true };
+    },
+  });
+
+  return <button>Toggle Theme</button>;
+}
+```
+
+Now, tell your AI "Turn off the lights", and it will autonomously trigger your React hook!

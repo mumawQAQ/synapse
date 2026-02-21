@@ -1,0 +1,36 @@
+{
+  "name": "@synapse/client",
+  "version": "0.0.0",
+  "description": "Client side hooks for AI Agent",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "@synapse/protocol": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "socket.io-client": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "react": "^18.0.0",
+    "socket.io-client": "^4.7.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

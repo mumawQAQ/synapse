@@ -1,0 +1,61 @@
+# Protocol APIs
+
+The `@synapse/protocol` package contains strongly-typed interfaces and Zod schemas shared by both the Backend Server and the Frontend Client.
+
+## Definitions
+
+If you are using TypeScript, you will frequently refer to the `ToolDefinition` type. A `ToolDefinition` tells the AI exactly how to use a function in your platform.
+
+### Client-Side Tools
+
+Client-side tools execute natively inside the user's browser (e.g., navigating a page, changing local state, interacting with React contexts).
+
+```typescript
+import { ClientSideToolDefinition } from "@synapse/protocol";
+import { z } from "zod";
+
+const myTool: ClientSideToolDefinition = {
+  name: "navigate_route",
+  description: "Navigates the user to a new URL within the site.",
+  executionSide: "client",
+  parameters: {
+    path: z.string().describe("The URL path to navigate to, e.g. /settings"),
+  },
+
+  // Optional schema for validation of what the browser returns
+  resultSchema: z.object({
+    success: z.boolean(),
+    error: z.string().optional(),
+  }),
+
+  // Optional function ran on the backend to verify if this tool should be visible based on UI state
+  contextFilter: (context) => context.metadata?.is_logged_in === true,
+};
+```
+
+### Server-Side Tools
+
+Server-side tools execute securely bypassing the client browser entirely. They are useful for inserting secure database rows, sending emails, or triggering infrastructure pipelines.
+
+```typescript
+import { ServerSideToolDefinition } from "@synapse/protocol";
+import { z } from "zod";
+
+const mySecureTool: ServerSideToolDefinition = {
+  name: "delete_database",
+  description: "Deletes a specified database if the user has permission.",
+  executionSide: "server",
+  parameters: { db_id: z.string() },
+
+  // The server-side code physically executes HERE on the Node.js backend.
+  handler: async (args, secureContext) => {
+    // secureContext is established by the server connection, do not trust client updates for authorization!
+    if (secureContext.role !== "admin") {
+      throw new Error("Unauthorized");
+    }
+
+    // Perform database deletion
+    return await myDb.delete(args.db_id);
+  },
+};
+```

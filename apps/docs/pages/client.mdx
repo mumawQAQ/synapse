@@ -1,0 +1,80 @@
+# React SDK Reference
+
+The `@synapse/client` package provides a dead-simple React SDK that seamlessly connects to your backend `AgentServer`.
+
+## `<AgentProvider />`
+
+The top-level Context Provider. It accepts an established `socket.io-client` connection.
+Wrap your entire application in this provider.
+
+```tsx
+import { AgentProvider } from "@synapse/client";
+import { io } from "socket.io-client";
+
+const socket = io("http://localhost:3000");
+
+export default function Root() {
+  return (
+    <AgentProvider socket={socket}>
+      <App />
+    </AgentProvider>
+  );
+}
+```
+
+## `useAgent()`
+
+A hook that returns the active agent interface. It is primarily used to stream messages to the agent, or update the dynamic Client Context directly.
+
+```tsx
+import { useAgent, AGENT_EVENTS } from "@synapse/client";
+
+export function ChatBox() {
+  const {
+    messages, // History of messages in the session
+    sendMessage, // Send a string to the LLM
+    executeTool, // Manually force an AI tool execution
+    socket, // Direct access to the underlying socket object
+  } = useAgent();
+
+  return (
+    <div>
+      <input
+        onKeyDown={(e) => {
+          if (e.key === "Enter") sendMessage(e.currentTarget.value);
+        }}
+      />
+
+      {messages.map((m) => (
+        <div>
+          {m.role}: {m.content}
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+## `useAgentTool()`
+
+The magical hook that exposes your frontend logic to the LLM.
+The LLM will see this tool's description and parameters. If it decides to call your tool, your local `handler` function will be invoked live in the user's browser. Look at `apps/playground-web` for a practical example!
+
+```tsx
+import { useAgentTool } from "@synapse/client";
+
+function MusicPlayer() {
+  useAgentTool({
+    name: "play_music",
+    description: "Start playing the current track.",
+
+    // Triggers instantly when the AI decides it wants to play music
+    handler: async (args) => {
+      document.querySelector("audio").play();
+      return { success: true, message: "Music started." };
+    },
+  });
+
+  return <audio src="/song.mp3" controls />;
+}
+```
